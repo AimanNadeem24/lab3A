@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyWidgetDemo());
+
+class MyWidgetDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Widget Showcase',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Widget Showcase'),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // Image displayed at the top
+            Image.network(
+             // 'https://bloomthis.co/cdn/shop/files/bloomthis-hat-box-aphrodite-red-rose-flower-box-1080x1080-08_ec80db86-4004-4404-9bf3-88a560c57b20.jpg?v=1713240579&width=1000',
+              'https://media.newyorker.com/photos/64baa7a29e87508ed764fdf3/master/w_2240,c_limit/Brody-Barbie-Review.jpgv',
+              height: 150,
+            ),
+            SizedBox(height: 20), // Spacer
+
+            // Row with icons and labels
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: [
+                    Icon(Icons.favorite, color: Colors.red),
+                    Text('Love'),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(Icons.star, color: Colors.orange),
+                    Text('Rate'),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(Icons.share, color: Colors.green),
+                    Text('Send'),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 40), // Spacer
+
+            // Elevated button at the bottom
+            ElevatedButton(
+              onPressed: () {
+                // Action when the button is pressed
+                print('Button has been pressed');
+              },
+              child: Text('Tap Me'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
